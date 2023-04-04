@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <!-- link font awoseme -->
+  <script src="https://kit.fontawesome.com/bc08b250b5.js" crossorigin="anonymous"></script>
+  <!-- link google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <!--  -->
+  <title>multi steps with js</title>
+</head>
+<main>
+  <div class="side-bar">
+    <div class="circle active">
+      <span>1</span>
+      <div class="circle-info">
+        <small>step 1</small>
+        <p>your info</p>
+      </div>
+    </div>
+    <div class="circle">
+      <span>2</span>
+      <div class="circle-info">
+        <small>step 2</small>
+        <p>select plan</p>
+      </div>
+    </div>
+    <div class="circle">
+      <span>3</span>
+      <div class="circle-info">
+        <small>step 3</small>
+        <p>add-ons</p>
+      </div>
+    </div>
+    <div class="circle">
+      <span>4</span>
+      <div class="circle-info">
+        <small>step 4</small>
+        <p>Summary</p>
+      </div>
+    </div>
+    <div class="circle">
+      <span>5</span>
+      <div class="circle-info">
+        <small>step 5</small>
+        <p>Finishing</p>
+      </div>
+    </div>
+  </div>
+  <div class="all-steps">
+    <!-- step-1 -->
+    <div class="stp stp-1">
+      <div class="header">
+        <h2>Personal info</h2>
+        <p>
+          pleasprovide your name , email address , and phone number
+        </p>
+      </div>
+      <!--------------- Star-forms -->
+      <form class="form">
+        <!-- input1 -->
+        <div class="label">
+          <label for="name">Name:</label>
+          <div class="err">this field is required</div>
+        </div>
+        <input type="text" placeholder="e.g. Stephen King" id="name">
+        <!-- input2 -->
+        <div class="label">
+          <label for="mail">Email:</label>
+          <div class="err">this field is required</div>
+        </div>
+        <input type="email" placeholder="e.g. stephenking@lorem.com" id="mail">
+        <!-- input3 -->
+        <div class="label">
+          <label for="phone">Phone Number:</label>
+          <div class="err">this field is required</div>
+        </div>
+        <input type="tel" placeholder="e.g. +1 234 567 890" id="phone" required>
+      </form>
+      <!--------------- End-form -->
+      <div class="nxt-prev">
+        <button type="submit" class="nxt" onclick="goToStepTwo()">Next Step</button>
+      </div>
+    </div>
+    <!-- step-2 -->
+    <div class="stp stp-2">
+      <div class="header">
+        <h2>Select your plan</h2>
+        <p>
+          you have the option of monthly or yearly billing
+        </p>
+      </div>
+      <div class="options">
+        <div class="option">
+          <img src="/images/icon-arcade.svg" width="35px">
+          <div class="about">
+            <p>Arcade</p>
+            <div class="price">$<span>9</span>/ <div class="how">mo</div>
+            </div>
+          </div>
+          <div class="free">2 Month Free</div>
+        </div>
+        <div class="option">
+          <img src="/images/icon-advanced.svg" width="35px">
+          <div class="about">
+            <p>Advanced</p>
+            <div class="price">$<span>12</span>/ <div class="how">mo</div>
+            </div>
+          </div>
+          <div class="free">2 Month Free</div>
+        </div>
+        <div class="option">
+          <img src="/images/icon-pro.svg" width="35px">
+          <div class="about">
+            <p>Pro</p>
+            <div class="price">$<span>15</span>/ <div class="how">mo</div>
+            </div>
+          </div>
+          <div class="free">2 Month Free</div>
+        </div>
+      </div>
+      <!-- toogle-switcher -->
+      <div class="toggle">
+        <p class="mo">Monthly</p>
+        <label class="switch">
+          <input type="checkbox" class="checkBox">
+          <span class="round"></span>
+        </label>
+        <p class="yrs">Yearly</p>
+      </div>
+      <!-- End-toggle-switcher -->
+      <div class="nxt-prev">
+        <button class="prev" onclick="backToStepOne()">
+          <i class="fa-solid fa-left-long"></i>Go Back
+        </button>
+        <button type="submit" class="nxt" onclick="goToStepThree()">
+          Next Step
+        </button>
+      </div>
+    </div>
+    <!-- step-3 -->
+    <div class="stp stp-3">
+      <div class="header">
+        <h2>Pick add-ons</h2>
+        <p>Add-ons help enhance your gaming experience</p>
+      </div>
+      <div class="offers">
+        <label class="offer" for="one">
+          <div class="left">
+            <input type="checkbox" id="one">
+            <div class="descr">
+              <h4>Large storage</h4>
+              <p>Extra 1TB of cloud save</p>
+            </div>
+          </div>
+          <div class="price-offer">+$ <span>2</span>/ <div class="witch">mo</div>
+          </div>
+        </label>
+        <!--  -->
+        <label class="offer" for="two">
+          <div class="left">
+            <input type="checkbox" id="two">
+            <div class="descr">
+              <h4>Customizable Profile</h4>
+              <p>Custom theme on your profile</p>
+            </div>
+          </div>
+          <div class="price-offer">+$<span>5</span>/ <div class="witch">mo</div>
+          </div>
+        </label>
+        <!--  -->
+        <label class="offer" for="three">
+          <div class="left">
+            <input type="checkbox" id="three">
+            <div class="descr">
+              <h4>Online Service</h4>
+              <p>Access to multiplayer games</p>
+            </div>
+          </div>
+          <div class="price-offer">+$ <span>1</span>/ <div class="witch">mo</div>
+          </div>
+        </label>
+
+      </div>
+      <div class="nxt-prev">
+        <button class="prev" onclick="BackToStepTwo()"> <i class="fa-solid fa-left-long"></i>Go Back</button>
+        <button type="submit" class="nxt" onclick="goToStepFour()">Next Step</button>
+      </div>
+    </div>
+    <!-- step-4 -->
+    <div class="stp stp-4">
+      <div class="header">
+        <h2>Finishing up</h2>
+        <p>Double check everythink lookd Ok before confirming</p>
+      </div>
+      <div class="result">
+        <div class="change">
+          <div class="left">
+            <div class="plane">
+              <p>Arcade</p>
+              <span>(Monthly)</span>
+            </div>
+            <a href="#" onclick="BackfromFourToTwo()">change</a>
+          </div>
+          <!--  -->
+          <div class="right">
+            $
+            <div class="pr">9</div>
+            /
+            <span class="offr-stp-4">mo</span>
+          </div>
+        </div>
+        <!-- #### -->
+        <div class="plus">
+          <h4>Offer Selected</h4>
+          <div class="offr">
+            <p>Large storage</p>
+            <div class="price-of-offer">
+              +$
+              <div class="prices">2</div>
+              /
+              <span class="offr-stp-4">mo</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="offr">
+            <p>Customizable Profile</p>
+            <div class="price-of-offer">+$ <div class="prices">5</div> / <span class="offr-stp-4">mo</span> </div>
+          </div>
+          <!--  -->
+          <div class="offr">
+            <p>Online service</p>
+            <div class="price-of-offer">+$ <div class="prices">1</div> / <span class="offr-stp-4">mo</span> </div>
+          </div>
+        </div>
+      </div>
+      <!-- ##### -->
+      <div class="total">
+        <p>Total<span>Month</span>:</p>
+        <div class="totl-price">
+          +$
+          <div class="price-tlt">22</div>
+          /
+          <span class="offr-stp-4">mo</span>
+        </div>
+      </div>
+      <!-- ##### -->
+      <div class="nxt-prev">
+        <button class="prev" onclick="backToStepThree()"> <i class="fa-solid fa-left-long"></i>Go Back</button>
+        <button type="submit" class="nxt" onclick="goToStepFive()">Confirm</button>
+      </div>
+    </div>
+    <!-- step-5 last-page to thank you -->
+    <div class="stp thanks stp-5">
+      <div class="img">
+        <img src="/images/icon-thank-you.svg">
+      </div>
+      <h1>Thank you !</h1>
+      <p>thanks for confirming your subscribtion!we hope you have fun using our patform . if you ever need support ,
+        pleas feel free to email us at suport@loremgaming.com</p>
+    </div>
+  </div>
+</main>
+
+<body>
+  <script src="/app.js"></script>
+</body>
+
+</html>
